@@ -65,13 +65,13 @@ namespace PontoService
                 {
                     case "1":
                         RegistraHora novoRegistro = new RegistraHora();
-                        novoRegistro.Data = DateTime.Now.Date; // Data atual do sistema
+                        novoRegistro.Data = DateTime.Now.Date; // Data atual do sistema (Pc)
                         novoRegistro.HoraInicio = DateTime.Now.TimeOfDay; // Hora de início atual do sistema
 
                         Console.WriteLine("Trabalhando... Pressione Enter quando terminar.");
                         Console.ReadLine();
 
-                        novoRegistro.HoraTermino = DateTime.Now.TimeOfDay; // Hora de término atual do sistema
+                        novoRegistro.HoraTermino = DateTime.Now.TimeOfDay; // Hora do sistema (Pc)
 
                         Console.Write("Descrição: ");
                         novoRegistro.Descricao = Console.ReadLine();
