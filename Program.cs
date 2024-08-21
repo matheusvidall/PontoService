@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -45,7 +45,6 @@ namespace PontoService
             }
         }
     }
-
     class Program
     {
         static void Main()
@@ -66,12 +65,14 @@ namespace PontoService
                 {
                     case "1":
                         RegistraHora novoRegistro = new RegistraHora();
-                        Console.Write("Data (dd/mm/yyyy): ");
-                        novoRegistro.Data = DateTime.Parse(Console.ReadLine());
-                        Console.Write("Hora de Início (hh:mm): ");
-                        novoRegistro.HoraInicio = TimeSpan.Parse(Console.ReadLine());
-                        Console.Write("Hora de Término (hh:mm): ");
-                        novoRegistro.HoraTermino = TimeSpan.Parse(Console.ReadLine());
+                        novoRegistro.Data = DateTime.Now.Date; // Data atual do sistema
+                        novoRegistro.HoraInicio = DateTime.Now.TimeOfDay; // Hora de início atual do sistema
+
+                        Console.WriteLine("Trabalhando... Pressione Enter quando terminar.");
+                        Console.ReadLine();
+
+                        novoRegistro.HoraTermino = DateTime.Now.TimeOfDay; // Hora de término atual do sistema
+
                         Console.Write("Descrição: ");
                         novoRegistro.Descricao = Console.ReadLine();
 
@@ -88,15 +89,16 @@ namespace PontoService
                         gerenciador.SalvarRegistros(caminhoArquivo);
                         break;
 
-                    case "4":
-                        continuar = false;
+    case "4":
+    continuar = false;
+                        break;
+ default:
+Console.WriteLine("Opção inválida, tente novamente.");
                         break;
 
-                    default:
-                        Console.WriteLine("Opção inválida, tente novamente.");
-                        break;
                 }
             }
         }
     }
 }
+//Dedicated To Bianca!!(:
